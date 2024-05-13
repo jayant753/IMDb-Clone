@@ -24,7 +24,7 @@ function TailerLeft({ selected }) {
                 <GoPlay className={`w-20 h-20 mb-6 ${hover ? `text-yellow-500` : `text-white`} duration-200`} />
                 <div className="flex flex-col gap-1">
                     <div className="flex items-end gap-8">
-                        <h1 className='text-4xl text-white'>{trailer[selected].title}</h1>
+                        <h1 className='text-4xl text-white max-w-[450px]'>{trailer[selected].title}</h1>
                         <h1 className='text-xl text-zinc-400'>{trailer[selected].duration}</h1>
                     </div>
                     <h2 className='text-2xl text-zinc-400'>{trailer[selected].description}</h2>

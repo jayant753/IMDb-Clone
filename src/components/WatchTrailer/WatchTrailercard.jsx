@@ -5,12 +5,12 @@ import { AiOutlineLike } from "react-icons/ai";
 import { CgHeart } from "react-icons/cg";
 
 function WatchTrailercard({ nextUp }) {
-    const [hover, setHover] = useState();
+    const [hover, setHover] = useState(null);
 
     const handleMouseEnter = (index) => {
         setHover(index);
     };
-    const handleMouseLeave = (index) => { setHover(""); };
+    const handleMouseLeave = (index) => { setHover(null); };
 
     return (
         <div className=' flex flex-col gap-5'>
