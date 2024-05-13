@@ -1,0 +1,8 @@
+body{
+    background: #000;
+    }
+    
+    ._trailergradient {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0));
+    }
+    
