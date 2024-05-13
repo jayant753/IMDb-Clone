@@ -10,10 +10,10 @@ function TrailerRight({ nextUp }) {
             <div className="w-full h-full _trailerRightgradient p-4 pb-0">
                 <WatchTrailercard nextUp={nextUp} />
             </div>
-            <div className="flex items-end gap-1 hover:text-yellow-500 w-fit">
+            <button className="flex items-end gap-1 hover:text-yellow-500 w-fit">
                 <h1 className='font-bold text-xl'>Browse trailers </h1>
                 <FaAngleRight className='pb-1 text-lg' />
-            </div>
+            </button>
 
 
         </div>
