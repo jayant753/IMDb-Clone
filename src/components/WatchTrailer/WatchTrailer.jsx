@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import WatchTrailerLeft from './WatchTrailerLeft'
 import WatchTrailerRight from './WatchTrailerRight'
 import { trailer } from '../../utils/constants';
-import CaroselLeftBtn from '../button/CaroselLeftBtn';
-import CaroselRightBtn from '../button/CaroselRightBtn';
+import CarouselLeftBtn from '../button/CarouselLeftBtn';
+import CarouselRightBtn from '../button/CarouselRightBtn';
 
 
 const WatchTrailer = () => {
@@ -31,9 +31,9 @@ const WatchTrailer = () => {
         <>
             <div className="flex gap-4 pt-28">
                 <div className="relative">
-                    <CaroselLeftBtn toggleSelectLeft={toggleSelectLeft} />
+                    <CarouselLeftBtn toggleSelectLeft={toggleSelectLeft} />
                     <WatchTrailerLeft selected={selected} className="w-fit" />
-                    <CaroselRightBtn toggleSelectRight={toggleSelectRight} />
+                    <CarouselRightBtn toggleSelectRight={toggleSelectRight} />
 
                 </div>
                 <WatchTrailerRight nextUp={nextUp} className="" />

@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaAngleRight } from "react-icons/fa6";
 
-function CaroselRightBtn({ toggleSelectRight }) {
+function CarouselRightBtn({ toggleSelectRight }) {
     return (
         <button onClick={toggleSelectRight} className='absolute z-10 top-1/3 right-0 text-3xl border rounded px-2 py-4 hover:text-yellow-500 duration-200'>
             <FaAngleRight className='relative z-20' />
@@ -10,4 +10,4 @@ function CaroselRightBtn({ toggleSelectRight }) {
     )
 }
 
-export default CaroselRightBtn
+export default CarouselRightBtn

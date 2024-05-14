@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { allFeatured } from '../../utils/constants'
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 import FeaturedCard from './FeaturedCard';
-import CaroselRightBtn from '../button/CaroselRightBtn';
-import CaroselLeftBtn from '../button/CaroselLeftBtn';
+import CarouselRightBtn from '../button/CarouselRightBtn';
+import CarouselLeftBtn from '../button/CarouselLeftBtn';
 
 function Featured() {
     const [FeaturedShow, setFeaturedShow] = useState([0, 1])
@@ -25,11 +25,11 @@ function Featured() {
             <h1 className='text-3xl text-yellow-500 font-bold px-3'>Featured today</h1>
             <div className="relative mt-4 w-[840px] h-[300px] ">
                 {!FeaturedShow.includes(0) &&
-                    <CaroselLeftBtn toggleSelectLeft={toggleSelectLeft} />
+                    <CarouselLeftBtn toggleSelectLeft={toggleSelectLeft} />
                 }
                 <FeaturedCard FeaturedShow={FeaturedShow} />
                 {!FeaturedShow.includes(allFeatured.length - 1) &&
-                    <CaroselRightBtn toggleSelectRight={toggleSelectRight} />
+                    <CarouselRightBtn toggleSelectRight={toggleSelectRight} />
                 }
             </div>
         </div>
