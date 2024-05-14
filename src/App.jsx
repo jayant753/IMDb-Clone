@@ -1,17 +1,22 @@
-import { useState } from 'react'
+import react, { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
-import WatchTrailer from './components/WatchTrailer/WatchTrailer';
 import Navbar from './components/Navbar/Navbar';
-import Featured from './components/Featured/Featured';
+import Home from './components/Pages/Home';
+import Trailers from './components/Pages/Trailers';
 
 
 function App() {
   return (
     <>
       <Navbar />
-      <div className='w-[85%] gap-4 mx-auto mb-64'>
-        <WatchTrailer />
-        <Featured />
+      <div className=' mt-28 mb-64'>
+        <BrowserRouter >
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/trailers" element={<Trailers />} />
+          </Routes>
+        </BrowserRouter>
       </div>
     </>
   );

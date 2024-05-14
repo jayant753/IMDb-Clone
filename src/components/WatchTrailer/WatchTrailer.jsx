@@ -29,7 +29,7 @@ const WatchTrailer = () => {
 
     return (
         <>
-            <div className="flex gap-4 pt-28">
+            <div className="flex gap-4">
                 <div className="relative">
                     <CarouselLeftBtn toggleSelectLeft={toggleSelectLeft} />
                     <WatchTrailerLeft selected={selected} className="w-fit" />

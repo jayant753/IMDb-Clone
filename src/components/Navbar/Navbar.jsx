@@ -5,7 +5,7 @@ import { BsBookmarkPlusFill } from "react-icons/bs";
 
 const Navbar = () => {
   return (
-    <nav className='z-50 h-[80px] bg-gray-900 fixed w-full items-center flex justify-between'>
+    <nav className='z-50 h-[80px] bg-gray-900 fixed top-0 w-full items-center flex justify-between'>
       <div className=' flex items-center gap-4 m-auto px-2 py-2 w-[60%] text-[24px] font-bold '>
         <a href='#'><button className='bg-yellow-400 text-black m-2'>IMDb</button></a>
         <div className='flex items-center text-[18px]'><FiAlignJustify />Menu</div>

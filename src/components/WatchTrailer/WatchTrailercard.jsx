@@ -7,9 +7,7 @@ import { CgHeart } from "react-icons/cg";
 function WatchTrailercard({ nextUp }) {
     const [hover, setHover] = useState(null);
 
-    const handleMouseEnter = (index) => {
-        setHover(index);
-    };
+    const handleMouseEnter = (index) => { setHover(index); };
     const handleMouseLeave = (index) => { setHover(null); };
 
     return (

@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { trailer } from '../../utils/constants';
-import WatchTrailercard from './WatchTrailercard';
+import WatchTrailercard from './WatchTrailerCard';
 import { FaAngleRight } from "react-icons/fa6";
 
 function TrailerRight({ nextUp }) {
@@ -11,7 +12,9 @@ function TrailerRight({ nextUp }) {
                 <WatchTrailercard nextUp={nextUp} />
             </div>
             <button className="flex items-end gap-1 hover:text-yellow-500 w-fit">
-                <h1 className='font-bold text-xl'>Browse trailers </h1>
+                <Link to="/trailers">
+                    <h1 className='font-bold text-xl'>Browse trailers </h1>
+                </Link>
                 <FaAngleRight className='pb-1 text-lg' />
             </button>
 
