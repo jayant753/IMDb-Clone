@@ -21,6 +21,8 @@ import featured10 from "../assets/featured10.jpg";
 import featured11 from "../assets/featured11.jpg";
 import featured12 from "../assets/featured12.jpg";
 
+const imagePath = "https://image.tmdb.org/t/p/original";
+
 const trailer = [
   {
     id: 1,
@@ -284,4 +286,10 @@ const trailersPageMovies = [
     date: "December 26, 2023",
   },
 ];
-export { trailer, allFeatured, trailersPageBtns, trailersPageMovies };
+export {
+  imagePath,
+  trailer,
+  allFeatured,
+  trailersPageBtns,
+  trailersPageMovies,
+};
