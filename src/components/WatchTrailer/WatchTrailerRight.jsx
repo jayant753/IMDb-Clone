@@ -12,7 +12,7 @@ function TrailerRight({ nextUp }) {
                 <WatchTrailercard nextUp={nextUp} />
             </div>
             <button className="flex items-end gap-1 hover:text-yellow-500 w-fit">
-                <Link to="/trailers">
+                <Link to="/movies">
                     <h1 className='font-bold text-xl'>Browse trailers </h1>
                 </Link>
                 <FaAngleRight className='pb-1 text-lg' />

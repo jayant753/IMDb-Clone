@@ -21,6 +21,11 @@ import featured10 from "../assets/featured10.jpg";
 import featured11 from "../assets/featured11.jpg";
 import featured12 from "../assets/featured12.jpg";
 
+import { addUpcoming } from "./redux/upcomingSlice";
+import { addNowPlaying } from "./redux/nowPlayingSlice";
+import { addTopRated } from "./redux/topRatedSlice";
+import { addPopular } from "./redux/popularSlice";
+
 const imagePath = "https://image.tmdb.org/t/p/original";
 
 const trailer = [
@@ -149,11 +154,35 @@ const allFeatured = [
   },
 ];
 
-const trailersPageBtns = [
-  "TRENDING TRAILERS",
-  "MOST ANTICIPATED",
-  "MOST PLAYED",
-  "RECENTLY ADDED",
+const moviePageBtns = [
+  {
+    id: 1,
+    btn: "UPCOMING",
+    value: "upcoming",
+    path: "upcoming",
+    addAction: addUpcoming,
+  },
+  {
+    id: 2,
+    btn: "NOW PLAYING",
+    value: "nowPlaying",
+    path: "now_playing",
+    addAction: addNowPlaying,
+  },
+  {
+    id: 3,
+    btn: "TOP RATED",
+    value: "topRated",
+    path: "top_rated",
+    addAction: addTopRated,
+  },
+  {
+    id: 4,
+    btn: "POPULAR",
+    value: "popular",
+    path: "popular",
+    addAction: addPopular,
+  },
 ];
 
 const trailersPageMovies = [
@@ -286,10 +315,4 @@ const trailersPageMovies = [
     date: "December 26, 2023",
   },
 ];
-export {
-  imagePath,
-  trailer,
-  allFeatured,
-  trailersPageBtns,
-  trailersPageMovies,
-};
+export { imagePath, trailer, allFeatured, moviePageBtns, trailersPageMovies };
