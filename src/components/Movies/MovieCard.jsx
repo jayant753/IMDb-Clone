@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import { trailersPageMovies } from '../../utils/constants'
-import { GoPlay } from "react-icons/go";
 import { imagePath } from '../../utils/constants';
 
 
@@ -11,12 +9,12 @@ function MovieCard({ movieData }) {
     const handleMouseLeave = (index) => { setHover(null); };
 
     return (
-        <div key={movieData.id} className="flex flex-col w-[220px] mt-8 ">
+        <div key={movieData.id} className="flex flex-col w-[240px] mt-8 ">
             <div className="relative cursor-pointer"
                 onMouseEnter={() => handleMouseEnter(movieData.id)}
                 onMouseLeave={() => handleMouseLeave()}
             >
-                <img src={imagePath + movieData.poster_path} className='w-[220px] aspect-[2/3]' alt="" />
+                <img src={imagePath + movieData.poster_path} className='w-[240px] aspect-[2/3]' alt="" />
                 <div className="absolute z-10 bottom-2 left-2 flex gap-2 items-center">
                     {/* <GoPlay className={` text-4xl ${hover == movieData.id ? `text-yellow-500` : ``} duration-200`} /> */}
                     {/* <p className='text-sm font-semibold'>{movieData.duration}</p> */}

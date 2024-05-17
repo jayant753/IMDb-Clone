@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { moviePageBtns } from '../../utils/constants'
 import MovieCard from '../Movies/MovieCard'
 import { useSelector, useDispatch } from 'react-redux'
-
+import { baseApi } from '../../api/axiosInstance'
 function MoviePage() {
     const upcoming = useSelector(store => store.upcoming.items)
     const nowPlaying = useSelector(store => store.nowPlaying.items)
@@ -20,14 +20,6 @@ function MoviePage() {
 
     const toggleSelection = (id) => { setFilter(moviePageBtns[id - 1].value) }
 
-    const options = {
-        method: 'GET',
-        headers: {
-            accept: 'application/json',
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0YWNjZDRjMmI3NWE3ZDUwYzA0ZGY3ZjllZmQ2NTM0YiIsInN1YiI6IjY2NDM2MDgwYjFmM2EzMTUzYTk2MTk3OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mkfD8ifzogqSAsgdKqSrcBMcXq-b__ZYkeZ4OhOheYs'
-        }
-    };
-
     useEffect(() => {
         if (pages[filter + "Page"] == 0) {
             setPages(prev => ({ ...prev, [filter + "Page"]: prev[filter + "Page"] + 1 }))
@@ -37,14 +29,13 @@ function MoviePage() {
         }
     }, [filter])
 
-    const fetchMovies = (filter, path, page, addAction) => {
-        fetch(`https://api.themoviedb.org/3/movie/${path}?language=en-US&page=${page}`, options)
-            .then(response => response.json())
-            .then(response => {
-                dispatch(addAction(response.results));
-
-            })
-            .catch(err => console.error(err));
+    const fetchMovies = async (filter, path, page, addAction) => {
+        try {
+            const movies = await baseApi.get(`/3/movie/${path}?language=en-US&page=${page}`);
+            dispatch(addAction(movies.data.results));
+        } catch (error) {
+            console.error("Error in fetching job posts", error);
+        }
     }
 
     const loadMoreMovies = () => {
@@ -73,7 +64,7 @@ function MoviePage() {
 
             {/* render movies list according to the selected filters */}
             <div className='mt-8 w-full '>
-                <div className="grid grid-cols-6 justify-items-center">
+                <div className="grid grid-cols-5 justify-items-center">
                     {filter == "nowPlaying" &&
                         nowPlaying.map(data => (
                             <MovieCard key={data.id} movieData={data} />
