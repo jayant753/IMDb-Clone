@@ -4,26 +4,37 @@ import WatchTrailerRight from './WatchTrailerRight'
 import CarouselLeftBtn from '../button/CarouselLeftBtn';
 import CarouselRightBtn from '../button/CarouselRightBtn';
 import { baseApi } from '../../api/axiosInstance';
+import { useDispatch, useSelector } from 'react-redux';
+import { addMoviesPages } from '../../utils/redux/moviesPagesSlice';
+import { addTopRatedMovies } from '../../utils/redux/topRatedMoviesSlice';
 
 
 
 const WatchTrailer = () => {
+    const topRatedMoviesPageCount = useSelector(store => store.moviesPages.items[0].topRatedPages)
+    const movies = useSelector(store => store.topRatedMovies.items)
+    const dispatch = useDispatch()
     const [selected, setSelected] = useState(0);
     const [nextUp, setNextUp] = useState([]);
-    const [movies, setMovies] = useState([])
+    // const [movies, setMovies] = useState([])
 
     const fetchToprated = async () => {
         try {
             const response = await baseApi.get(`/3/movie/top_rated?language=en-US&page=1`);
-            setMovies(response.data.results)
+            dispatch(addTopRatedMovies(response.data.results))
+            dispatch(addMoviesPages("topRatedPages"))
+
         } catch {
             err => console.log(err)
         }
     }
 
     useEffect(() => {
-        fetchToprated()
-    }, [])
+        if (movies.length == 0) {
+            fetchToprated()
+            dispatch(addMoviesPages("topRatedPages"))
+        }
+    }, [movies])
 
     const toggleSelectLeft = () => {
         setSelected((selected - 1 + movies.length) % movies.length);
