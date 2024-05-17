@@ -7,6 +7,7 @@ import { baseApi } from '../../api/axiosInstance';
 import { useDispatch, useSelector } from 'react-redux';
 import { addMoviesPages } from '../../utils/redux/moviesPagesSlice';
 import { addTopRatedMovies } from '../../utils/redux/topRatedMoviesSlice';
+import { Link } from 'react-router-dom';
 
 
 
@@ -60,7 +61,9 @@ const WatchTrailer = () => {
                     <CarouselLeftBtn toggleSelectLeft={toggleSelectLeft} />
                     {
                         movies.length &&
-                        <WatchTrailerLeft movies={movies} selected={selected} className="w-fit" />
+                        <Link to={`/details/${movies[selected].id}`}>
+                            <WatchTrailerLeft movies={movies} selected={selected} className="w-fit" />
+                        </Link>
                     }
                     <CarouselRightBtn toggleSelectRight={toggleSelectRight} />
 

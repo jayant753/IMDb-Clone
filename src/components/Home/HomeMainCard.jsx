@@ -23,7 +23,7 @@ function TailerLeft({ movies, selected }) {
                     <div className="flex items-end gap-8">
                         <h1 className='text-4xl text-white max-w-[450px]'>{movies[selected].original_title}</h1>
                     </div>
-                    <h2 className='text-xl text-zinc-400 line-clamp-1'>{movies[selected].overview.substring(10)}</h2>
+                    <h2 className='text-xl text-zinc-400 line-clamp-3'>{movies[selected].overview.substring(10)}</h2>
                     <div className='flex gap-3 items-center text-zinc-400'>
                         <div className="flex items-center gap-1">
                             <AiOutlineLike className='text-lg' />
