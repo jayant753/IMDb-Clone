@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const popularSlice = createSlice({
-  name: "popular",
+const topRatedMoviesSlice = createSlice({
+  name: "topRatedMovies",
   initialState: {
     items: [],
   },
 
   reducers: {
-    addPopular: (state, action) => {
+    addTopRatedMovies: (state, action) => {
       state.items.push(...action.payload);
     },
     // removeItem: (state, action) => {
@@ -20,6 +20,6 @@ const popularSlice = createSlice({
   },
 });
 
-export const { addPopular } = popularSlice.actions;
+export const { addTopRatedMovies } = topRatedMoviesSlice.actions;
 
-export default popularSlice.reducer;
+export default topRatedMoviesSlice.reducer;

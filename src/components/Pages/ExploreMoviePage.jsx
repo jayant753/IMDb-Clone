@@ -3,11 +3,13 @@ import { moviePageBtns } from '../../utils/constants'
 import MovieCard from '../Movies/MovieCard'
 import { useSelector, useDispatch } from 'react-redux'
 import { baseApi } from '../../api/axiosInstance'
+
 function ExploreMoviePage() {
-    const upcoming = useSelector(store => store.upcoming.items)
-    const nowPlaying = useSelector(store => store.nowPlaying.items)
-    const popular = useSelector(store => store.popular.items)
-    const topRated = useSelector(store => store.topRated.items)
+    const moviesPages = useSelector(store => store.moviesPages.items[0])
+    const upcoming = useSelector(store => store.upcomingMovies.items)
+    const nowPlaying = useSelector(store => store.nowPlayingMovies.items)
+    const popular = useSelector(store => store.popularMovies.items)
+    const topRated = useSelector(store => store.topRatedMovies.items)
     const dispatch = useDispatch();
 
     const [filter, setFilter] = useState(moviePageBtns[0].value)
@@ -21,29 +23,29 @@ function ExploreMoviePage() {
     const toggleSelection = (id) => { setFilter(moviePageBtns[id - 1].value) }
 
     useEffect(() => {
-        if (pages[filter + "Page"] == 0) {
-            setPages(prev => ({ ...prev, [filter + "Page"]: prev[filter + "Page"] + 1 }))
+        if (moviesPages[filter + "Pages"] == 0) {
             const btn = moviePageBtns.filter(item => item.value == filter)
-            const { value, path, addAction } = btn[0]
-            fetchMovies(filter, path, 1, addAction);
+            const { value, path, addMovies, addPages } = btn[0]
+            fetchMovies(filter, path, 1, addMovies, addPages);
+
         }
     }, [filter])
 
-    const fetchMovies = async (filter, path, page, addAction) => {
+    const fetchMovies = async (filter, path, page, addMovies, addPages) => {
         try {
             const movies = await baseApi.get(`/3/movie/${path}?language=en-US&page=${page}`);
-            dispatch(addAction(movies.data.results));
+            dispatch(addMovies(movies.data.results));
+            dispatch(addPages(filter + "Pages"))
         } catch (error) {
-            console.error("Error in fetching job posts", error);
+            console.error("Error in fetching movies", error);
         }
     }
 
     const loadMoreMovies = () => {
         const btn = moviePageBtns.filter(item => item.value == filter)
-        const { value, path, addAction } = btn[0]
-        const page = pages[filter + 'Page'] + 1;
-        setPages(prev => ({ ...prev, [filter + "Page"]: prev[filter + "Page"] + 1 }))
-        fetchMovies(filter, path, page, addAction);
+        const { value, path, addMovies, addPages } = btn[0]
+        const page = moviesPages[filter + "Pages"] + 1;
+        fetchMovies(filter, path, page, addMovies, addPages);
     }
 
     return (

@@ -1,15 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
-import nowPlayingSlice from "./nowPlayingSlice";
-import popularSlice from "./popularSlice";
-import topRatedSlice from "./topRatedSlice";
-import upcomingSlice from "./upcomingSlice";
+import nowPlayingMoviesSlice from "./nowPlayingMoviesSlice";
+import popularMoviesSlice from "./popularMoviesSlice";
+import topRatedMoviesSlice from "./topRatedMoviesSlice";
+import upcomingMoviesSlice from "./upcomingMoviesSlice";
+import moviesPagesSlice from "./moviesPagesSlice";
 
 const store = configureStore({
   reducer: {
-    upcoming: upcomingSlice,
-    nowPlaying: nowPlayingSlice,
-    popular: popularSlice,
-    topRated: topRatedSlice,
+    moviesPages: moviesPagesSlice,
+    upcomingMovies: upcomingMoviesSlice,
+    nowPlayingMovies: nowPlayingMoviesSlice,
+    popularMovies: popularMoviesSlice,
+    topRatedMovies: topRatedMoviesSlice,
   },
 });
 

@@ -11,10 +11,11 @@ import featured10 from "../assets/featured10.jpg";
 import featured11 from "../assets/featured11.jpg";
 import featured12 from "../assets/featured12.jpg";
 
-import { addUpcoming } from "./redux/upcomingSlice";
-import { addNowPlaying } from "./redux/nowPlayingSlice";
-import { addTopRated } from "./redux/topRatedSlice";
-import { addPopular } from "./redux/popularSlice";
+import { addUpcomingMovies } from "./redux/upcomingMoviesSlice";
+import { addNowPlayingMovies } from "./redux/nowPlayingMoviesSlice";
+import { addTopRatedMovies } from "./redux/topRatedMoviesSlice";
+import { addPopularMovies } from "./redux/popularMoviesSlice";
+import { addMoviesPages } from "./redux/moviesPagesSlice";
 
 const imagePath = "https://image.tmdb.org/t/p/original";
 
@@ -99,28 +100,32 @@ const moviePageBtns = [
     btn: "UPCOMING",
     value: "upcoming",
     path: "upcoming",
-    addAction: addUpcoming,
+    addMovies: addUpcomingMovies,
+    addPages: addMoviesPages,
   },
   {
     id: 2,
     btn: "NOW PLAYING",
     value: "nowPlaying",
     path: "now_playing",
-    addAction: addNowPlaying,
+    addMovies: addNowPlayingMovies,
+    addPages: addMoviesPages,
   },
   {
     id: 3,
     btn: "TOP RATED",
     value: "topRated",
     path: "top_rated",
-    addAction: addTopRated,
+    addMovies: addTopRatedMovies,
+    addPages: addMoviesPages,
   },
   {
     id: 4,
     btn: "POPULAR",
     value: "popular",
     path: "popular",
-    addAction: addPopular,
+    addMovies: addPopularMovies,
+    addPages: addMoviesPages,
   },
 ];
 

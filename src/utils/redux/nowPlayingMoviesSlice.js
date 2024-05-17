@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const upcomingSlice = createSlice({
-  name: "upcoming",
+const nowPlayingMoviesSlice = createSlice({
+  name: "nowPlayingMovies",
   initialState: {
     items: [],
   },
 
   reducers: {
-    addUpcoming: (state, action) => {
+    addNowPlayingMovies: (state, action) => {
       state.items.push(...action.payload);
     },
     // removeItem: (state, action) => {
@@ -20,6 +20,6 @@ const upcomingSlice = createSlice({
   },
 });
 
-export const { addUpcoming } = upcomingSlice.actions;
+export const { addNowPlayingMovies } = nowPlayingMoviesSlice.actions;
 
-export default upcomingSlice.reducer;
+export default nowPlayingMoviesSlice.reducer;
