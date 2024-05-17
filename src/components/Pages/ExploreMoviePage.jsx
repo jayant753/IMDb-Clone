@@ -3,7 +3,7 @@ import { moviePageBtns } from '../../utils/constants'
 import MovieCard from '../Movies/MovieCard'
 import { useSelector, useDispatch } from 'react-redux'
 import { baseApi } from '../../api/axiosInstance'
-function MoviePage() {
+function ExploreMoviePage() {
     const upcoming = useSelector(store => store.upcoming.items)
     const nowPlaying = useSelector(store => store.nowPlaying.items)
     const popular = useSelector(store => store.popular.items)
@@ -98,4 +98,4 @@ function MoviePage() {
     )
 }
 
-export default MoviePage
+export default ExploreMoviePage

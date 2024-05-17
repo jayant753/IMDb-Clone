@@ -3,9 +3,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Pages/Home';
-import MoviePage from './components/Pages/MoviePage';
+import ExploreMoviePage from './components/Pages/ExploreMoviePage';
 import SignIn from './components/Pages/signIn/SignIn';
 import SignUp from './components/Pages/signUp/SignUp';
+import MovieDetails from './components/Pages/MovieDetails';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
         <div className=' mt-28 mb-64'>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/movies" element={<MoviePage />} />
+            <Route path="/movies" element={<ExploreMoviePage />} />
+            <Route path="/Details" element={<MovieDetails />} />
             <Route path="/signIn" element={<SignIn />} />
             <Route path="/signUp" element={<SignUp />} />
           </Routes>
