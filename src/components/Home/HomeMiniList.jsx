@@ -1,14 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import WatchTrailerCard from './WatchTrailerCard';
+import HomeMiniCard from './HomeMiniCard';
 import { FaAngleRight } from "react-icons/fa6";
 
-function TrailerRight({ movies, nextUp }) {
+function HomeMiniList({ movies, nextUp }) {
     return (
         <div className='flex flex-col gap-5 w-[400px]'>
             <h1 className='font-bold text-xl text-yellow-500'>Up next</h1>
             <div className="w-full h-full _trailerRightgradient p-4 pb-0">
-                <WatchTrailerCard movies={movies} nextUp={nextUp} />
+                <HomeMiniCard movies={movies} nextUp={nextUp} />
             </div>
             <button className="flex items-end gap-1 hover:text-yellow-500 w-fit">
                 <Link to="/movies">
@@ -22,4 +22,4 @@ function TrailerRight({ movies, nextUp }) {
     )
 }
 
-export default TrailerRight;
+export default HomeMiniList;

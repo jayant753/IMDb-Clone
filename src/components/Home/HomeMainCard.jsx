@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { AiOutlineLike } from "react-icons/ai";
 import { imagePath } from '../../utils/constants';
 
-function TailerLeft({ movies, selected }) {
+function HomeMainCard({ movies, selected }) {
     const [hover, setHover] = useState(false);
 
     const handleMouseEnter = () => { setHover(true); };
@@ -36,4 +36,4 @@ function TailerLeft({ movies, selected }) {
     )
 }
 
-export default TailerLeft
+export default HomeMainCard

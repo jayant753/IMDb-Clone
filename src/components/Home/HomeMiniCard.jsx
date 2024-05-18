@@ -3,7 +3,7 @@ import { AiOutlineLike } from "react-icons/ai";
 import { imagePath } from '../../utils/constants';
 import { Link } from 'react-router-dom';
 
-function WatchTrailercard({ movies, nextUp }) {
+function HomeMiniCard({ movies, nextUp }) {
     const [hover, setHover] = useState(null);
 
     const handleMouseEnter = (index) => { setHover(index); };
@@ -39,4 +39,4 @@ function WatchTrailercard({ movies, nextUp }) {
     )
 }
 
-export default WatchTrailercard
+export default HomeMiniCard

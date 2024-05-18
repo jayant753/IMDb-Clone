@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import WatchTrailerLeft from './WatchTrailerLeft'
-import WatchTrailerRight from './WatchTrailerRight'
+import HomeMainCard from './HomeMainCard'
+import HomeMiniList from './HomeMiniList'
 import CarouselLeftBtn from '../button/CarouselLeftBtn';
 import CarouselRightBtn from '../button/CarouselRightBtn';
 import { baseApi } from '../../api/axiosInstance';
@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 
 
-const WatchTrailer = () => {
+const HomeSlider = () => {
     const topRatedMoviesPageCount = useSelector(store => store.moviesPages.items[0].topRatedPages)
     const movies = useSelector(store => store.topRatedMovies.items)
     const dispatch = useDispatch()
@@ -62,14 +62,14 @@ const WatchTrailer = () => {
                     {
                         movies.length &&
                         <Link to={`/details/${movies[selected].id}`}>
-                            <WatchTrailerLeft movies={movies} selected={selected} className="w-fit" />
+                            <HomeMainCard movies={movies} selected={selected} className="w-fit" />
                         </Link>
                     }
                     <CarouselRightBtn toggleSelectRight={toggleSelectRight} />
 
                 </div>
                 {movies.length &&
-                    <WatchTrailerRight movies={movies} nextUp={nextUp} className="" />
+                    <HomeMiniList movies={movies} nextUp={nextUp} className="" />
                 }
             </div>
         </>
@@ -77,4 +77,4 @@ const WatchTrailer = () => {
     )
 }
 
-export default WatchTrailer;
+export default HomeSlider;
