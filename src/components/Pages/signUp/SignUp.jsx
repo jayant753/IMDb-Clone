@@ -43,7 +43,8 @@ const SignUp = () => {
 
 
   return (
-    <div className="bg-white text-black justify-center items-center p-2 w-[30%]">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 border">
+    <div className="bg-white text-black justify-center items-center p-12 mb-20 w-[30%] border border-black-500  ">
       <div className='justify-center items-center bg-cover'>
         <Link to="/"><button className="bg-[#f5c518] text-black font-bold p-1 text-[24px] rounded-md">
           IMDb
@@ -64,7 +65,7 @@ const SignUp = () => {
       <div>
         <p className="flex ">Already have an account?<Link to="/signIn"><span className="text-[#75b2fe] flex">Sign In <MdArrowRight /></span></Link></p>
       </div>
-
+      </div>
     </div>
   )
 }

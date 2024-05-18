@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import WatchTrailerLeft from './WatchTrailerLeft'
-import WatchTrailerRight from './WatchTrailerRight'
+import { useEffect, useState } from 'react'
+// import WatchTrailerLeft from './WatchTrailerLeft'
+// import WatchTrailerRight from './WatchTrailerRight'
 import CarouselLeftBtn from '../button/CarouselLeftBtn';
 import CarouselRightBtn from '../button/CarouselRightBtn';
 import { baseApi } from '../../api/axiosInstance';
