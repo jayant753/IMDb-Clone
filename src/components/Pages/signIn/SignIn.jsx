@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import FormInput from './FormInput';
 import { Link, useNavigate } from 'react-router-dom';
 import { collection, onSnapshot, query } from "firebase/firestore";
@@ -15,7 +15,8 @@ const SignIn = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    checkUserCredentials();
+    console.log(formData)
+     checkUserCredentials();
     
   }
 
@@ -24,21 +25,27 @@ const SignIn = () => {
     setFormData({...formData, [name] : value})
   }
 
-  const getAllUsers = async () => {
+  const getAllUsers = () => {
     const q = query(collection(db, "user"))
     const users = onSnapshot(q, (querySnapshot) => {
       let userArray = [];
       querySnapshot.forEach((doc) => {
         userArray.push({...doc.data(), id : doc.id})
       })
+      console.log("userArray", userArray);
       setUsers(userArray)
     })
   }
 
+useEffect(()=>{
+getAllUsers();
+},[])
+
   const checkUserCredentials = () => {
-    getAllUsers();
+    console.log("user", user);
+    console.log(formData);
     for (let i=0 ; i<user.length; i++) {
-      if (user[i].user.email !== formData.email || user[i].user.password !== formData.password) {
+      if (user[i].email !== formData.email || user[i].password !== formData.password) {
         toast.error( 'Invalid Credentials', {
         position : 'top-right',
           autoClose : 5000
@@ -57,7 +64,7 @@ const SignIn = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 border">
-      <div className="bg-white text-black justify-center items-center p-12 mb-25 w-[30%] border border-black-500">
+      <div className="bg-white text-black justify-center items-center  p-12 mb-40 w-[30%] border border-black-500">
         <div>
           <Link to="/">
             <button className='bg-[#f5c518] text-black font-bold p-1 text-[24px] rounded-md'>
@@ -91,7 +98,7 @@ const SignIn = () => {
           <div>
             <p>New to IMDb?</p>
             <Link to="/signUp">
-              <button className="border" type='submit'>Create your IMDb account</button>
+              <button className="border-black bg-gray-200 " type='submit'>Create your IMDb account</button>
             </Link>
           </div>
         </div>

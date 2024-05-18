@@ -7,6 +7,7 @@ import SignIn from './components/Pages/signIn/SignIn';
 import SignUp from './components/Pages/signUp/SignUp';
 import MovieDetails from './components/Pages/MovieDetails';
 import Watchlist from './components/Pages/watchlist/watchlist';
+import Footer from "./components/Pages/Footer";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
             <Route path="/signIn" element={<SignIn />} />
             <Route path="/signUp" element={<SignUp />} />
           </Routes>
-
+        <Footer/>
         </div>
       </BrowserRouter>
     </>
