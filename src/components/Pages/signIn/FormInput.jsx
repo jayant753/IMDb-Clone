@@ -4,7 +4,7 @@ const FormInput = ({ labelText, inputType, inputPlaceholder, required }) => {
   return (
     <div>
       <div>
-        <label htmlFor="" className='font-bold text-[12px]'> {labelText} </label>
+        <label htmlFor="" className='font-bold text-[12px] w-[80%]'> {labelText} </label>
         {
           required ? <sup className='text-red-500 text-[12px]'>*</sup> : ""
         }
