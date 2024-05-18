@@ -16,7 +16,7 @@ const Navbar = () => {
         </div>
         <div className='flex text-[18px] gap-5 items-center'>
           <div className='flex items-center'>IMDb<span className='text-[#077790]'>Pro</span></div>
-          <button className='flex items-center text-[18px]'><BsBookmarkPlusFill /> Watchlist</button>
+          <Link to="/watchlist"><button className='flex items-center text-[18px]'><BsBookmarkPlusFill /> Watchlist</button></Link>
           <Link to="/signIn"><div className='flex items-center gap-1'>Sign <span>In</span></div></Link>
           <div>lang</div>
         </div>

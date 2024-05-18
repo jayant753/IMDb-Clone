@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import HomeMainCard from './HomeMainCard'
 import HomeMiniList from './HomeMiniList'
 import CarouselLeftBtn from '../button/CarouselLeftBtn';
