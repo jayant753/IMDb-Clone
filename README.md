@@ -35,6 +35,10 @@ This th frontend project of replica of popular site IMDb.
 - Jayant Pachpohe(https://github.com/jayant753/)
 - Sahil Nagle(https://github.com/bobbyrepo)
 
+## Deployment
+
+[Click Here](https://subtle-naiad-052ed9.netlify.app/) to see my IMDb-Clone website.
+
 ## Installation
 
 Instructions on how to install and set up your project.
@@ -51,7 +55,3 @@ npm install
 
 # Run the project
 npm run dev
-
-## Deployment
-
-[Click Here](https://subtle-naiad-052ed9.netlify.app/) to see my IMDb-Clone website.
