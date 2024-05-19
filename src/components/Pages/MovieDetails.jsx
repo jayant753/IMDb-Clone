@@ -30,11 +30,11 @@ function MovieDetails() {
     useEffect(() => {
         fetchDetails()
         fetchTrailer()
-    }, [])
+    }, [params])
 
     const opts = {
         height: '350',
-        width: '574',
+        width: '564',
     };
 
 
@@ -67,9 +67,9 @@ function MovieDetails() {
                             <h2 className='mt-4 italic text-xl text-zinc-300'>Released Date : {details?.release_date}</h2>
                         </div>
                     </div>
-                    <div className="grid grid-cols-2 gap-x-8 gap-y-10 ">
+                    <div className="row gap-x-8 gap-y-10 ">
                         {trailers.map(link =>
-                            <div className="flex flex-col gap-2">
+                            <div className="col flex flex-col gap-0">
                                 <Youtube videoId={link.key} opts={opts} />
                                 <h1 className='text-xl'>{link.name}</h1>
                             </div>
