@@ -50,13 +50,13 @@ function ExploreMoviePage() {
 
     return (
         <div className='w-[90%] mx-auto'>
-            <h1 className='text-3xl text-yellow-500 font-bold px-3'>Explore Movies</h1>
-            <div className="flex mt-8">
+            <h1 className='md:text-3xl sm:text-2xl text-xl text-yellow-500 font-bold sm:px-3'>Explore Movies</h1>
+            <div className="flex flex-wrap md:mt-8 sm:mt-3 mt-0">
                 {moviePageBtns.map((item) => (
-                    <div key={item.id} className='flex flex-col  items-center'>
+                    <div key={item.id} className='flex flex-col items-center'>
                         <button
                             onClick={() => toggleSelection(item.id)}
-                            className={`text-base font-semibold text-center px-6 py-4 hover:bg-[#121212] ${filter == item.id ? "" : ""}`}>
+                            className={`md:text-base sm:text-sm text-xs font-semibold text-center lg:w-44 md:w-40 sm:w-36 w-fit sm:p-0 p-2  sm:h-16 h-10 hover:bg-[#121212] ${filter == item.id ? "" : ""}`}>
 
                             {item.btn}</button>
                         <div className={` h-0.5 bg-blue-500 ${filter == item.value ? "w-full" : "w-0"} duration-200`}></div>
@@ -65,8 +65,8 @@ function ExploreMoviePage() {
             </div>
 
             {/* render movies list according to the selected filters */}
-            <div className='mt-8 w-full '>
-                <div className="grid grid-cols-5 justify-items-center">
+            <div className='md:mt-8 sm:mt-3 mt-0" w-full'>
+                <div className="row ">
                     {filter == "nowPlaying" &&
                         nowPlaying.map(data => (
                             <MovieCard key={data.id} movieData={data} />
