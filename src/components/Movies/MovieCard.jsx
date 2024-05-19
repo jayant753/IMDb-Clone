@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { imagePath } from '../../utils/constants';
 import { Link } from 'react-router-dom';
 

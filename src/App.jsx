@@ -6,7 +6,6 @@ import ExploreMoviePage from './components/Pages/ExploreMoviePage';
 import SignIn from './components/Pages/signIn/SignIn';
 import SignUp from './components/Pages/signUp/SignUp';
 import MovieDetails from './components/Pages/MovieDetails';
-import Watchlist from './components/Pages/watchlist/watchlist';
 import Footer from "./components/Pages/Footer";
 
 function App() {
@@ -19,7 +18,6 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/movies" element={<ExploreMoviePage />} />
             <Route path="/details/:id" element={<MovieDetails />} />
-            <Route path='/watchlist' element={<Watchlist/>}/>
             <Route path="/signIn" element={<SignIn />} />
             <Route path="/signUp" element={<SignUp />} />
           </Routes>
