@@ -7,7 +7,7 @@ import { FaFacebookSquare } from "react-icons/fa";
 const Footer = () => {
   return (
     <div>
-    <div className="my-20 mx-[100px] grid grid-cols-2 ">
+    <div className=" grid grid-cols-2 px-32 py-20">
       
       <div className="w-[40%] h-[150px] outline justify-center ">
         <div className="my-5 text-[20px] font-bold justify-center px-12 py-2 flex">
@@ -31,15 +31,15 @@ const Footer = () => {
             <img src='' alt='QR'/>
         </div>
         </div>
-      <div className="my-10 mx-20">
-        <div className="flex gap-4 my-4 mx-10">
+      <div className="py-10 px-20  ">
+        <div className="flex gap-4 py-4 px-10">
         <div>Help</div>
         <div>Site Index</div>
         <div>IMDbPro</div>
         <div>Box Office Mojo</div>
         <div>License IMDb Data</div>
         </div>
-        <div className="flex gap-4 my-4">
+        <div className="flex gap-4 py-4 w-[800px]">
         <div>Press Room</div>
         <div>Advertising</div>
         <div>Jobs</div>
