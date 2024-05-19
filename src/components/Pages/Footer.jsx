@@ -10,7 +10,7 @@ const Footer = () => {
     <div className=" grid grid-cols-2 px-32 py-20">
       
       <div className="w-[40%] h-[150px] outline justify-center ">
-        <div className="my-5 text-[20px] font-bold justify-center px-12 py-2 flex">
+        <div className="my-4 text-[20px] font-bold justify-center px-12 py-2 flex">
           Follow IMDb on social
         </div>
         <div className="flex justify-center gap-7 text-[24px] ">
