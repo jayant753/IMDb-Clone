@@ -55,7 +55,7 @@ const HomeSlider = () => {
 
     return (
         <>
-            <div className="flex flex-col xl:flex-row gap-4">
+            <div className="flex flex-col xl:flex-row gap-4 justify-between">
                 <div className="relative w-fit">
                     <CarouselLeftBtn toggleSelectLeft={toggleSelectLeft} />
                     {

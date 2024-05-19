@@ -4,7 +4,7 @@ import Featured from '../Featured/Featured'
 
 function Home() {
     return (
-        <div className=' xl:w-[85%] mx-auto'>
+        <div className='xl:w-[85%] mx-auto'>
             <HomeSlider />
             {/* <Featured /> */}
         </div >
