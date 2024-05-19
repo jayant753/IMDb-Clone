@@ -54,4 +54,4 @@ npm run dev
 
 ## Deployment
 
-[Click Here]() to see my IMDb-Clone website.
+[Click Here](https://subtle-naiad-052ed9.netlify.app/) to see my IMDb-Clone website.
