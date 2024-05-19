@@ -12,12 +12,11 @@ import { Link } from 'react-router-dom';
 
 
 const HomeSlider = () => {
-    const topRatedMoviesPageCount = useSelector(store => store.moviesPages.items[0].topRatedPages)
+    // const topRatedMoviesPageCount = useSelector(store => store.moviesPages.items[0].topRatedPages)
     const movies = useSelector(store => store.topRatedMovies.items)
     const dispatch = useDispatch()
     const [selected, setSelected] = useState(0);
     const [nextUp, setNextUp] = useState([]);
-    // const [movies, setMovies] = useState([])
 
     const fetchToprated = async () => {
         try {
@@ -56,8 +55,8 @@ const HomeSlider = () => {
 
     return (
         <>
-            <div className="flex gap-4">
-                <div className="relative">
+            <div className="flex flex-col xl:flex-row gap-4">
+                <div className="relative w-fit">
                     <CarouselLeftBtn toggleSelectLeft={toggleSelectLeft} />
                     {
                         movies.length &&
